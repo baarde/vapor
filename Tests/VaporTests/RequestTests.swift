@@ -230,6 +230,11 @@ final class RequestTests: XCTestCase {
             let uri = URI()
             XCTAssertEqual(uri.string, "/")
         }
+        do {
+            let zeros = String(repeatElement("0", count: 65_512))
+            let uri = URI(string: "https://vapor.codes.somewhere-else.test:\(zeros)443")
+            XCTAssertEqual(uri.host, "vapor.codes.somewhere-else.test")
+        }
     }
     
     func testRedirect() throws {

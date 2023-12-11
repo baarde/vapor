@@ -35,8 +35,8 @@ enum vapor_urlparser_fields
 };
 
 struct vapor_urlparser_field_data {
-    uint16_t off;               /* Offset into buffer in which field starts */
-    uint16_t len;               /* Length of run in buffer */
+    size_t off;               /* Offset into buffer in which field starts */
+    size_t len;               /* Length of run in buffer */
 };
 
 /* Result structure for urlparser_parse_url().
